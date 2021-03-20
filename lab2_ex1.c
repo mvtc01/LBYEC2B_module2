@@ -1,16 +1,21 @@
 #include <stdio.h>
 #include <string.h>
 
+
 int main(void)
 {
+	FILE *fp;
 	int len;
 	char phrase[20];
 	printf("Enter input string: ");
-	gets(phrase);
+	scanf("%[^\n]s",phrase);
 	len = strlen(phrase);
+	fp = fopen("output.txt","w");
+	fputs(phrase,fp);
 	puts(phrase);
+	fclose(fp);
 
-for(int i = 0; i < len-1; i++){     //loops (length of sphrase)-2 number of times, shifts array elements by 1 in every loop
+for(int i = 0; i < len-1; i++){     
         int i3;    
         
         for(i3 = len - 1; i3 > 0; i3--){    
@@ -19,6 +24,12 @@ for(int i = 0; i < len-1; i++){     //loops (length of sphrase)-2 number of time
   									    
         phrase[i3] = ' ';			    
         puts(phrase);
+        fp = fopen("output.txt","a");
+        fputc('\n',fp);
+        fputs(phrase,fp);
+        fclose(fp);
     }
+    
     return 0;
 }
+
