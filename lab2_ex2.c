@@ -7,7 +7,6 @@ int main(void)
 	FILE *fp;
 	int len;
 	char phrase[20];
-	printf("Enter input string: ");
 	scanf("%[^\n]s",phrase);
 	len = strlen(phrase);
 	fp = fopen("output.txt","w");
