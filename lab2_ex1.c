@@ -11,6 +11,7 @@ int main(void)
 	len = strlen(phrase);
 	fp = fopen("output.txt","w");
 	fputs(phrase,fp);
+	puts(phrase);
 	fclose(fp);
 
 for(int i = 0; i < len-1; i++){     
